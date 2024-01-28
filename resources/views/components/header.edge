@@ -1,0 +1,44 @@
+@eval(await auth.check())
+<header class="sticky top-0 m-2">
+  <div class="navbar bg-base-100 rounded-lg">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          @!navLink({href: "/", title: "Home"})
+          @if(auth.isAuthenticated)
+            @!navLink({href: "/account", title: "Account"})
+            @!navLink({href: "/dashboard", title: "Dashboard"})
+          @end
+        </ul>
+      </div>
+      <a class="btn btn-ghost text-xl" href="/">Les Bons Points</a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-2">
+        @!navLink({href: "/", title: "Home"})
+        @if(auth.isAuthenticated)
+          @!navLink({href: "/account", title: "Account"})
+          @!navLink({href: "/dashboard", title: "Dashboard"})
+        @end
+      </ul>
+    </div>
+    <div class="navbar-end">
+      @if(auth.isAuthenticated)
+        <div class="flex flex-row gap-2 items-center">
+          <span>
+            {{ auth.user.fullName }}
+          </span>
+          @!auth.logout({ text: "Logout" })
+        </div>
+      @else
+        <a class="btn btn-primary" href="/login">Login</a>
+      @end
+    </div>
+  </div>
+</header>

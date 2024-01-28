@@ -1,0 +1,29 @@
+@page({title:"Register"})
+  @form.wrapper({method: "post"})
+    @slot("text")
+      <h1 class="text-5xl font-bold"> Welcome ! </h1>
+      <p class="py-6">
+        With an account you can create score boards and save them.
+        Join us to enjoy all the possibilities !
+      </p>
+      <a href="/login" class="label-text-alt underline">Already have an account ? Login here !</a>
+
+    @end
+    @slot("form")
+      @!form.input({
+        label: "Full name",
+        name: "fullName"
+      })
+      @!form.input({
+        label: "Email",
+        name: "email"
+      })
+      @!form.input({
+        label: "Password",
+        name: "password",
+        type: "password"
+      })
+      @!form.submit({ label: "Create Account" })
+    @end
+  @end
+@end

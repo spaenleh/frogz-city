@@ -1,0 +1,38 @@
+@page({title: "Home"})
+<div class="hero">
+  <div class="hero-content text-center">
+    <div>
+      <h1 class="text-5xl font-bold"> Les Bons Points </h1>
+      <p class="py-6"> Ce site fournit un service de collecte de bons points </p>
+      <a href="/register" class="btn btn-primary"> Register to get started </a>
+    </div>
+  </div>
+</div>
+<div class="grid gap-6 mt-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+  @card({
+  title: "SkyJo Score Board",
+  href: "skyjo",
+  content: "Compute your SKYJO scores easily and keep them to review later !"
+  })
+  @slot('hero')
+  <figure class="h-20 bg-gradient-to-r from-primary to-secondary"></figure>
+  @end
+  @slot('actions')
+  <button class="btn btn-primary btn-sm">Hello</button>
+  @end
+  @end
+
+  @card({
+  title: "Les bons points",
+  href: "/dashboard",
+  content: `Notes ses camarades et leur donner des bons points si ils sont sages.`
+  })
+  @slot('hero')
+  <figure class="h-20 bg-gradient-to-r from-success to-warning"></figure>
+  @end
+  @slot('actions')
+  <button class="btn btn-primary btn-sm">Go !</button>
+  @end
+  @end
+</div>
+@end

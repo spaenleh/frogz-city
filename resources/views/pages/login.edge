@@ -1,0 +1,23 @@
+@page({title: "Login", bgClass: "bg-slate-200" })
+  @form.wrapper({ method: "post" })
+    @slot("text")
+      <h1 class="text-5xl font-bold"> Welcome back ! </h1>
+      <p class="py-6">Logged in users can create and manage their score boards and much more !</p>
+      <a href="/register" class="label-text-alt underline">Don't have an account yet ?</a>
+    @end
+
+    @slot("form")
+      @!form.input({
+        label: "Email",
+        name: "email"
+      })
+      @!form.input({
+        label: "Password",
+        name: "password",
+        type: "password"
+      })
+      @!form.submit({ label: "Login" })
+
+    @end
+  @end
+@end

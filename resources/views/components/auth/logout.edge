@@ -1,0 +1,5 @@
+
+<form action="/logout" method="post">
+  {{csrfField()}}
+  <button role="submit" class="{{ btnClass || "btn btn-primary" }}">{{ text || "Logout"}}</button>
+</form>

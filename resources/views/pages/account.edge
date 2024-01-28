@@ -1,0 +1,18 @@
+@page({title: "Account Page"})
+  <h1 class="text-4xl font-bold">Welcome, {{ auth.user.fullName }}</h1>
+  <ul>
+    <li>
+      Name: {{auth.user.fullName}}
+    </li>
+    <li>
+      Email: {{auth.user.email}}
+    </li>
+    <li>
+      CreatedAt: {{auth.user.createdAt}}
+    </li>
+    <li>
+      UpdatedAt: {{auth.user.updatedAt}}
+    </li>
+  </ul>
+  @!auth.logout()
+@end

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html data-theme="mytheme">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> {{ title }} </title>
+
+  @vite(['resources/js/app.js'])
+</head>
+
+<body class="flex flex-col grow h-screen {{bgClass || "bg-slate-200"}}">
+  @!header()
+  <main class="m-4 p-4 box-border grow">
+    {{{ await $slots.main() }}}
+  </main>
+  @!footer()
+</body>
+
+</html>

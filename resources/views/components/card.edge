@@ -1,0 +1,10 @@
+<a href="{{ href }}" class="card shadow-xl hover:scale-[105%] transition-all bg-base-100">
+  {{{ await $slots.hero() }}}
+  <div class="card-body">
+    <h2 class="card-title"> {{ title }} </h2>
+    <p> {{ content }} </p>
+    <div class="card-actions justify-end">
+      {{{ await $slots.actions() }}}
+    </div>
+  </div>
+</a>
